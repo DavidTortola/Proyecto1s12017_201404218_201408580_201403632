@@ -547,7 +547,7 @@ class Matriz(object):
 
 						while Auxiliar!=None:
 
-							if nombreusuario== Auxiliar.getValor().getUsuario() and abajo.getValor()==departamento and derecha.getValor() == empresa:
+							if nombreusuario== Auxiliar.getValor().getUsuario() and Auxiliar.getValor().getY()==departamento and Auxiliar.getValor().getX() == empresa:
 							
 								return Auxiliar.getValor()
 							else:
