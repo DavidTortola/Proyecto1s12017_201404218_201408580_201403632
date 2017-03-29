@@ -67,7 +67,9 @@
                             }
                         %>
                     </div>
-
+                            <div class="top-big-link">
+                                <a class="btn btn-link-3" href="index.jsp">Inicio</a>
+                            </div>
                 </form>
             </div>
         </div>
