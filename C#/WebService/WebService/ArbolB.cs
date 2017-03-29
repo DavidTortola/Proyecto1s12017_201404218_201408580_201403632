@@ -688,7 +688,7 @@ namespace WebService
         {
             NodoArbolB auxNode = this.raiz;
 
-            StreamWriter sw = new StreamWriter("C:\\Reportes\\ArbolB.txt");
+            StreamWriter sw = new StreamWriter("C:\\graficas\\ArbolB.txt");
             sw.WriteLine("digraph G {");
             sw.WriteLine("\t rankdir = TB; \n");
             sw.WriteLine("\t node[shape=record]; \n");
@@ -700,8 +700,8 @@ namespace WebService
             sw.WriteLine("\t } \n");
             sw.Close();
             String dotPath = "dot.exe";
-            String fileInputPath = "C:\\Reportes\\ArbolB.txt";
-            String fileOutputPath = "C:\\Reportes\\ArbolB.png";
+            String fileInputPath = "C:\\graficas\\ArbolB.txt";
+            String fileOutputPath = "C:\\graficas\\ArbolB.png";
             String tParam = "-Tpng";
             String tOParam = "-o";
             String[] cmd = new String[5];
