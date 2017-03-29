@@ -1,0 +1,6 @@
+digraph Matriz{ bgcolor=gray 
+node [fontcolor="white", height=0.5, color="white"]
+[shape=circle, style=filled, color=blue]rankdir=UD 
+edge  [color="white", dir=fordware]
+6;
+}

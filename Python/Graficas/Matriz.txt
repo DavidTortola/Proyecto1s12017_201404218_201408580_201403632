@@ -1,0 +1,24 @@
+digraph Matriz{ bgcolor=gray 
+node [fontcolor="white", height=0.5, color="white"]
+[shape=tripleoctagon, style=filled, color=blue]rankdir=LR 
+edge  [color="black", dir=fordware]
+inicial[style ="filled"; label="inicial";pos= "0,0!"] 
+"c"[style ="filled"; label="c";pos= "1,0!"]
+d[style ="filled"; label=d;pos= "0,1!"]
+a[shape=doubleoctagon,style ="filled"; label=a;pos= "1,1!"]
+
+ inicial->"c"->inicial->d->inicial;
+"c";"c";
+d;
+d;
+"c"->a;
+
+
+
+d->a;
+
+
+
+a->"c";
+a->d;
+}
