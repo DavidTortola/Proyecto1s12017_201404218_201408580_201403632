@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="usuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="empresa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="deartamento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="departamento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,16 +31,16 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EliminarActivo", propOrder = {
     "usuario",
-    "id",
     "empresa",
-    "deartamento"
+    "departamento",
+    "id"
 })
 public class EliminarActivo {
 
     protected String usuario;
-    protected String id;
     protected String empresa;
-    protected String deartamento;
+    protected String departamento;
+    protected String id;
 
     /**
      * Obtiene el valor de la propiedad usuario.
@@ -64,30 +64,6 @@ public class EliminarActivo {
      */
     public void setUsuario(String value) {
         this.usuario = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * Define el valor de la propiedad id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setId(String value) {
-        this.id = value;
     }
 
     /**
@@ -115,27 +91,51 @@ public class EliminarActivo {
     }
 
     /**
-     * Obtiene el valor de la propiedad deartamento.
+     * Obtiene el valor de la propiedad departamento.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDeartamento() {
-        return deartamento;
+    public String getDepartamento() {
+        return departamento;
     }
 
     /**
-     * Define el valor de la propiedad deartamento.
+     * Define el valor de la propiedad departamento.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDeartamento(String value) {
-        this.deartamento = value;
+    public void setDepartamento(String value) {
+        this.departamento = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad id.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Define el valor de la propiedad id.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setId(String value) {
+        this.id = value;
     }
 
 }

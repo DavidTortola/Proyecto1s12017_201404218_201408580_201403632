@@ -47,9 +47,9 @@
 <xs:complexType name="EliminarActivo">
 <xs:sequence>
 <xs:element name="usuario" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:string" minOccurs="0"/>
 <xs:element name="empresa" type="xs:string" minOccurs="0"/>
-<xs:element name="deartamento" type="xs:string" minOccurs="0"/>
+<xs:element name="departamento" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -124,8 +124,8 @@
 <xs:element name="usuario" type="xs:string" minOccurs="0"/>
 <xs:element name="pass" type="xs:string" minOccurs="0"/>
 <xs:element name="nombre" type="xs:string" minOccurs="0"/>
-<xs:element name="departamento" type="xs:string" minOccurs="0"/>
 <xs:element name="empresa" type="xs:string" minOccurs="0"/>
+<xs:element name="departamento" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

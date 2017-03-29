@@ -90,10 +90,10 @@ public interface Principal {
 
     /**
      * 
+     * @param departamento
      * @param usuario
      * @param id
      * @param empresa
-     * @param deartamento
      * @return
      *     returns java.lang.String
      */
@@ -105,12 +105,12 @@ public interface Principal {
     public String eliminarActivo(
         @WebParam(name = "usuario", targetNamespace = "")
         String usuario,
-        @WebParam(name = "id", targetNamespace = "")
-        String id,
         @WebParam(name = "empresa", targetNamespace = "")
         String empresa,
-        @WebParam(name = "deartamento", targetNamespace = "")
-        String deartamento);
+        @WebParam(name = "departamento", targetNamespace = "")
+        String departamento,
+        @WebParam(name = "id", targetNamespace = "")
+        String id);
 
     /**
      * 
@@ -194,10 +194,10 @@ public interface Principal {
         String pass,
         @WebParam(name = "nombre", targetNamespace = "")
         String nombre,
-        @WebParam(name = "departamento", targetNamespace = "")
-        String departamento,
         @WebParam(name = "empresa", targetNamespace = "")
-        String empresa);
+        String empresa,
+        @WebParam(name = "departamento", targetNamespace = "")
+        String departamento);
 
     /**
      * 

@@ -19,8 +19,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="usuario" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="pass" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="departamento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="empresa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="departamento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,16 +34,16 @@ import javax.xml.bind.annotation.XmlType;
     "usuario",
     "pass",
     "nombre",
-    "departamento",
-    "empresa"
+    "empresa",
+    "departamento"
 })
 public class Registrar {
 
     protected String usuario;
     protected String pass;
     protected String nombre;
-    protected String departamento;
     protected String empresa;
+    protected String departamento;
 
     /**
      * Obtiene el valor de la propiedad usuario.
@@ -118,30 +118,6 @@ public class Registrar {
     }
 
     /**
-     * Obtiene el valor de la propiedad departamento.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDepartamento() {
-        return departamento;
-    }
-
-    /**
-     * Define el valor de la propiedad departamento.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDepartamento(String value) {
-        this.departamento = value;
-    }
-
-    /**
      * Obtiene el valor de la propiedad empresa.
      * 
      * @return
@@ -163,6 +139,30 @@ public class Registrar {
      */
     public void setEmpresa(String value) {
         this.empresa = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad departamento.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    /**
+     * Define el valor de la propiedad departamento.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDepartamento(String value) {
+        this.departamento = value;
     }
 
 }

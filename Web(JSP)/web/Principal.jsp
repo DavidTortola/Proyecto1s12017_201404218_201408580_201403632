@@ -4,6 +4,7 @@
     Author     : Jorge Espina
 --%>
 
+<%@page import="java.lang.String"%>
 <%@page import="Clases.Datos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,12 +19,11 @@
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     </head>
     <body>
-
         <!-- Header -->
         <section id="header">
             <header>
                 <span class="image avatar"><img src="images/pro.jpg" alt="" /></span>
-                <h1 id="logo"><a href="#">Marco Galindo</a></h1>
+                <h1 id="logo"><a href="#">  <%=(String) session.getAttribute( "theName" ) %> </a></h1>
                 <p>Bienvenido a la aplicacion de Creacion de activos <br />
                     y modificacion, Eliminacion de los mismos</p>
             </header>
@@ -76,9 +76,13 @@
                                                             Datos d = new Datos();
                                                             d.setNombreProducto(request.getParameter("nombre"));
                                                             d.setDescripcion(request.getParameter("descripcion"));
-                                                            String Usu = "andre";//d.getUsuario();
-                                                            String Dep = "departamento informatica";//d.getDepartamento();
-                                                            String Empre = "empresa usac";//d.getEmpresa();
+                                                             //= "andre";//d.getUsuario();
+                                                              String Usu = (String) session.getAttribute( "theName" ); 
+                                                              String Dep = (String) session.getAttribute( "thedepartamento" ); 
+                                                              String Empre = (String) session.getAttribute( "theempresa" );
+
+                                                            // = "departamento informatica";//d.getDepartamento();
+                                                             //= "empresa usac";//d.getEmpresa();
                                                             String Desc = d.getDescripcion();
                                                             String NomP = d.getNombreProducto();
                                                             d.CreacionActivos(Usu, NomP, Desc, Empre, Dep);
@@ -91,7 +95,7 @@
                                                     } catch (Exception ex) {
                                                         out.println("");
                                                     }
-                                                %>
+                                             %>
                                         </ul>
                                     </div>
                                 </div>
@@ -112,12 +116,24 @@
                                     <div class="form-group">
                                         <div class="col-xs-5 selectContainer">
                                             <select class="form-control" name="idproducto">
-                                                <option value="">ID Producto</option>
+                                                <option  value="00000">ID Producto</option>
+                                                <%int contador =0;
+                                                String Acum = "";
+                                                String Ar = "a,a,a";
+                                                String[] Arreglo1 =Ar.split(",");
+                                                contador =0;
+                                                for(int j =0; j<Arreglo1.length;j++){
+                                                    if (contador==0){
+                                                        Acum = Acum + "<option>"+Arreglo1[0]+"</option> \n";
+                                                        contador++;
+                                                    }
+                                                }                                                
+                                                %>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="12u"><input type="text" name="nombre" id="name" placeholder="Nombre" /></div>
-                                    <div class="12u"><input type="text" name="idproducto" id="name" placeholder="ID Producto" /></div>
+                                    <div class="12u"><input type="text" name="nombre1" id="name" placeholder="Nombre" /></div>
+                                    
                                 </div>
                                 <div class="row uniform">
                                     <div class="12u"><textarea name="descripcion" id="message" placeholder="Descripcion" rows="6"></textarea></div>
@@ -126,6 +142,35 @@
                                     <div class="12u">
                                         <ul class="actions">
                                             <li><input type="submit" class="special" value="Eliminar Activo" /></li>
+                                            <%
+                                                    try {
+
+                                                        if (request.getParameter("nombre1") != null) {
+                                                            Datos d = new Datos();
+                                                            d.setId(request.getParameter("idproducto"));
+                                                            d.setNombreProducto(request.getParameter("nombre1"));
+                                                            d.setDescripcion(request.getParameter("descripcion"));
+                                                             //= "andre";//d.getUsuario();
+                                                              String Usu = (String) session.getAttribute( "theName" ); 
+                                                              String Dep = (String) session.getAttribute( "thedepartamento" ); 
+                                                              String Empre = (String) session.getAttribute( "theempresa" );
+                                                              
+                                                            // = "departamento informatica";//d.getDepartamento();
+                                                             //= "empresa usac";//d.getEmpresa();
+                                                            String Desc = d.getDescripcion();
+                                                            String NomP = d.getNombreProducto();
+                                                            String Id = d.getId();
+                                                            d.EliminacionActivos(Usu, Id, Empre, Dep);
+                                                            /*out.println("<br>Tu Usuario es: " + d.getUsuario());
+                                                            out.println("<br>Tu Contraseña es: " + d.getContraseña());
+                                                            out.println("<br>Tu Empresa es: " + d.getEmpresa());
+                                                            out.println("<br>Tu Departamento es: " + d.getDepartamento());
+                                                            out.println("<br>Tu Nombre es: " + d.getNombre());*/
+                                                        }
+                                                    } catch (Exception ex) {
+                                                        out.println("");
+                                                    }
+                                             %>
                                         </ul>
                                     </div>
                                 </div>
@@ -145,12 +190,11 @@
                                     <div class="form-group">
                                         <div class="col-xs-5 selectContainer">
                                             <select class="form-control" name="idproducto">
-                                                <option value="">ID Producto</option>
+                                                <option value="00000">ID Producto</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="12u"><input type="text" name="nombre" id="name" placeholder="Nombre" /></div>
-                                    <div class="12u"><input type="text" name="idproducto" id="name" placeholder="ID Producto" /></div>
+                                    <div class="12u"><input type="text" name="nombre2" id="name" placeholder="Nombre" /></div>
                                 </div>
                                 <div class="row uniform">
                                     <div class="12u"><textarea name="descripcion" id="message" placeholder="Descripcion" rows="6"></textarea></div>
@@ -159,6 +203,35 @@
                                     <div class="12u">
                                         <ul class="actions">
                                             <li><input type="submit" class="special" value="Modificacion Activo" /></li>
+                                            <%
+                                                    try {
+
+                                                        if (request.getParameter("nombre2") != null) {
+                                                            Datos d = new Datos();
+                                                            d.setId(request.getParameter("idproducto"));
+                                                            d.setNombreProducto(request.getParameter("nombre2"));
+                                                            d.setDescripcion(request.getParameter("descripcion"));
+                                                             //= "andre";//d.getUsuario();
+                                                              String Usu = (String) session.getAttribute( "theName" ); 
+                                                              String Dep = (String) session.getAttribute( "thedepartamento" ); 
+                                                              String Empre = (String) session.getAttribute( "theempresa" );
+                                                              
+                                                            // = "departamento informatica";//d.getDepartamento();
+                                                             //= "empresa usac";//d.getEmpresa();
+                                                            String Desc = d.getDescripcion();
+                                                            String NomP = d.getNombreProducto();
+                                                            String Id = d.getId();
+                                                            d.ModificacionActivos(Usu, Id, NomP, Desc , Empre, Dep );
+                                                            /*out.println("<br>Tu Usuario es: " + d.getUsuario());
+                                                            out.println("<br>Tu Contraseña es: " + d.getContraseña());
+                                                            out.println("<br>Tu Empresa es: " + d.getEmpresa());
+                                                            out.println("<br>Tu Departamento es: " + d.getDepartamento());
+                                                            out.println("<br>Tu Nombre es: " + d.getNombre());*/
+                                                        }
+                                                    } catch (Exception ex) {
+                                                        out.println("");
+                                                    }
+                                             %>
                                         </ul>
                                     </div>
                                 </div>
